@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Reset de margens e padding para todos os elementos, e definição de box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do body */
+body {
+    background-color: #e3e9f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px; /* Adiciona espaçamento ao redor do body */
+}
+
+/* Estilo do background animado */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: backgroundAnimation 15s infinite alternate;
+}
+
+/* Estilo do container principal */
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px 0; /* Adiciona espaçamento na parte superior e inferior */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo do título */
+h1 {
+    color: #07006b;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Container flexível para organizar as seções */
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Estilo das seções individuais */
+.section {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    width: 48%;
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+}
+
+/* Altera a largura da barra de rolagem */
+.section::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Estiliza o fundo da barra de rolagem (a trilha) */
+.section::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo */
+}
+
+/* Estiliza o manipulador da barra de rolagem (o botão de rolagem) */
+.section::-webkit-scrollbar-thumb {
+    background: #000852; /* Cor do botão de rolagem */
+}
+
+/* Estiliza o estado de hover do botão de rolagem */
+.section::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do botão de rolagem ao passar o mouse */
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo dos rótulos */
+label {
+    margin-bottom: 8px;
+    color: #555;
+    width: 100%;
+    text-align: left;
+}
+
+/* Estilo dos inputs e selects */
+input, select {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+/* Estilo dos inputs e selects quando em foco */
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo dos botões */
+button {
+    padding: 12px;
+    background: linear-gradient(45deg, #000852, #000852);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+/* Estilo dos botões quando em hover */
+button:hover {
+    background: linear-gradient(45deg, #0056b3, #004494);
+    transform: scale(1.05);
+}
+
+/* Estilo da tabela de resultados */
+#resultsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo das células e cabeçalhos da tabela de resultados */
+#resultsTable th, #resultsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilo dos cabeçalhos da tabela de resultados */
+#resultsTable th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo da seção de sub-redes calculadas */
+#calculatedSubnetsSection {
+    width: 100%; /* Largura média das duas seções acima */
+    overflow-x: auto; /* Barra de rolagem horizontal */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo da seção */
+}
+
+/* Altera a largura da barra de rolagem da seção de sub-redes calculadas */
+#calculatedSubnetsSection::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Estiliza o fundo da barra de rolagem da seção de sub-redes calculadas */
+#calculatedSubnetsSection::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo */
+}
+
+/* Estiliza o manipulador da barra de rolagem da seção de sub-redes calculadas */
+#calculatedSubnetsSection::-webkit-scrollbar-thumb {
+    background: #000852; /* Cor do botão de rolagem */
+}
+
+/* Estiliza o estado de hover do botão de rolagem da seção de sub-redes calculadas */
+#calculatedSubnetsSection::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do botão de rolagem ao passar o mouse */
+}
+
+/* Estilo da tabela de sub-redes calculadas */
+#calculatedSubnetsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo das células e cabeçalhos da tabela de sub-redes calculadas */
+#calculatedSubnetsTable th, #calculatedSubnetsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilo dos cabeçalhos da tabela de sub-redes calculadas */
+#calculatedSubnetsTable th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo da mensagem de erro */
+#errorMessage {
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilo do rodapé */
+footer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Estilo do texto do rodapé */
+footer p {
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff, 0 0 55px #007bff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animação do texto do rodapé */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff, 0 0 55px #007bff;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #007bff, 0 0 50px #007bff, 0 0 60px #007bff, 0 0 75px #007bff;
+    }
+}
+
+/* Altera a largura da barra de rolagem para todos os elementos */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Estiliza o fundo da barra de rolagem (a trilha) para todos os elementos */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo */
+}
+
+/* Estiliza o manipulador da barra de rolagem (o botão de rolagem) para todos os elementos */
+::-webkit-scrollbar-thumb {
+    background: #000852; /* Cor do botão de rolagem */
+}
+
+/* Estiliza o estado de hover do botão de rolagem para todos os elementos */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor do botão de rolagem ao passar o mouse */
+}
+
+/* Estilo dos botões de paginação */
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.pagination-buttons button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background: linear-gradient(45deg, #000852, #000852);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.pagination-buttons button:hover {
+    background: linear-gradient(45deg, #0056b3, #004494);
+    transform: scale(1.05);
+}
+
+/* Estilo da informação de página */
+#pageInfo {
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Adiciona a classe .hidden para ocultar elementos */
+.hidden {
+    display: none;
+}
